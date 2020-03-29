@@ -14,8 +14,6 @@ var (
 
 func TOTP(k []byte) (value uint32) {
 	t := uint64((time.Now().Unix() - T0) / X)
-	buf := make([]byte, binary.MaxVarintLen64)
-	binary.BigEndian.PutUint64(buf, t)
-	value = hotp.HOTP(k, buf)
+	value = hotp.HOTP(k, t)
 	return
 }
