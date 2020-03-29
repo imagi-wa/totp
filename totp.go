@@ -1,7 +1,6 @@
 package totp
 
 import (
-	"encoding/binary"
 	"time"
 
 	"github.com/imagi-wa/hotp"
